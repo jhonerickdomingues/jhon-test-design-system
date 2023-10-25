@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": ["es6"],
+    // "moduleResolution": "node",
+    // "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    "noImplicitAny": false,
+  },
+  "include": ["vite.config.ts"],
+  "exclude": ["node_modules"]
+}
+
+
+// a{
+//   "compilerOptions": {
+//     "composite": true,
+//     "allowJs": true,
+//     "allowSyntheticDefaultImports": true,
+//     "esModuleInterop": true,
+//     "isolatedModules": true,
+//     "jsx": "react",
+//     "lib": ["es6"],
+//     "moduleResolution": "node",
+//     "noEmit": true,
+//     "strict": true,
+//     "target": "esnext",
+//     "noImplicitAny": false,
+//   },
+
+//   "include": ["vite.config.ts"],
+//   "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
+// }

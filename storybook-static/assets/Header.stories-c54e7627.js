@@ -1,0 +1,4 @@
+import{H as a}from"./Header-7f4f28fb.js";import"./Compact-f59f8b37.js";import"./index-2b530214.js";import"./_commonjsHelpers-de833af9.js";import"./assertThisInitialized-601f600e.js";import"./InputSearch-89e00405.js";import"./index-5d3273a5.js";import"./EyeOutlined-cb7ad596.js";import"./compact-item-fa55b580.js";import"./useMergedState-8f95610d.js";import"./button-341896df.js";import"./Sider-eb0e29b6.js";import"./LeftOutlined-47c8fca4.js";import"./row-1da44976.js";const y={title:"Ds/Header",component:a,parameters:{layout:"fullscreen"},tags:["autodocs"],argTypes:{onSearch:{}}},r={args:{}};var o,t,e;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`{
+  args: {}
+}`,...(e=(t=r.parameters)==null?void 0:t.docs)==null?void 0:e.source}}};const S=["Default"];export{r as Default,S as __namedExportsOrder,y as default};
+//# sourceMappingURL=Header.stories-c54e7627.js.map

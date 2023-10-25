@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: design-system/Dockerfile
+    image: design-system
+    restart: unless-stopped
+    container_name: design-system
+    ports:
+      - 8086:8086
+    environment:
+      - TZ=America/Sao_Paulo
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.design-system.entrypoints=web"
+      - "traefik.http.routers.design-system.rule=Host(`jhon-test-design-system.jhonerick.me`)"
+      - "traefik.http.routers.design-system.service=design-system"
+      - "traefik.http.services.design-system.loadbalancer.server.port=8086"
+    networks:
+      - traefikProxyNet
+networks:
+  traefikProxyNet:
+    external: true
