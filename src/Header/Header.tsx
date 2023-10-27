@@ -11,10 +11,11 @@ const HeaderComponent = ({ onSearch, ...props }: IHeaderComponent) => {
       {...props}
       style={{
         display: "grid",
+        padding: "0 20px",
       }}
     >
       <Row align={"middle"}>
-        <Col sm={12} md={16}>
+        <Col xs={10} sm={16} md={16}>
           <h2 style={{ color: "white", margin: 0 }}>Products</h2>
         </Col>
         <Col
@@ -23,6 +24,7 @@ const HeaderComponent = ({ onSearch, ...props }: IHeaderComponent) => {
           }}
           md={8}
           sm={12}
+          xs={14}
         >
           <DsInputSearch allowClear onSearch={onSearch} />
         </Col>

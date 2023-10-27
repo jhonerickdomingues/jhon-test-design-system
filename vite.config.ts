@@ -18,7 +18,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // https://rollupjs.org/configuration-options/
-      external: ["react", "antd", "react-dom"],
+      external: ["react", "antd", "react-dom", "jhon-test-utils"],
     },
   },
 });

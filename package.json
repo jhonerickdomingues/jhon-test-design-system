@@ -1,7 +1,7 @@
 {
   "name": "jhon-test-design-system",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.2",
   "type": "module",
   "emitDeclarationOnly": true,
   "declaration": true,
@@ -16,6 +16,7 @@
     "build-storybook": "export NODE_OPTIONS=--max_old_space_size=4096 && storybook build"
   },
   "dependencies": {
+    "jhon-test-utils": "^0.0.1",
     "antd": "^5.10.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

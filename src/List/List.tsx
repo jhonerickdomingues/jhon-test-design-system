@@ -1,20 +1,15 @@
 import { Col, List, Row, Image } from "antd";
-
 import { ListProps } from "antd/es/list";
 import { useState } from "react";
+import { ProductType } from "jhon-test-utils";
 
-interface IProduct {
-  nome: string;
-  descrição: string;
-  preco_promocional: number;
-  preco_original: number;
-  imagens: string[];
-  categoria: string;
-}
+interface IListComponent extends ListProps<ProductType> {}
 
-interface IListComponent extends ListProps<IProduct> {}
-
-const ListComponent = ({ dataSource, ...props }: IListComponent) => {
+const ListComponent = ({
+  dataSource,
+  pagination,
+  ...props
+}: IListComponent) => {
   const [current, setCurrent] = useState(0);
 
   return (
@@ -22,40 +17,40 @@ const ListComponent = ({ dataSource, ...props }: IListComponent) => {
       {...props}
       itemLayout="vertical"
       size="large"
-      pagination={{
-        onChange: (page) => {
-          console.log(page);
-        },
-        pageSize: 3,
-      }}
+      pagination={
+        pagination || {
+          pageSize: 5,
+          showSizeChanger: true,
+        }
+      }
       dataSource={dataSource}
       renderItem={(item) => (
-        <List.Item key={item.nome} style={{ height: "100px" }}>
+        <List.Item key={item.nome} style={{ height: "auto" }}>
           <Row>
-            <Col span={12}>
+            <Col xs={24} sm={24} md={12}>
               {item.imagens.length ? (
                 <Image.PreviewGroup
-                  items={item.imagens}
+                  items={item.imagens.map((image) => image.url)}
                   preview={{ current, onChange: (index) => setCurrent(index) }}
                 >
                   {item.imagens.map((image, imageIndex) => (
                     <Image
                       key={`imagem_${imageIndex}`}
                       style={{ padding: "0 2px" }}
-                      height={60}
+                      height={80}
                       onClick={() => setCurrent(imageIndex)}
-                      src={image}
+                      src={image.url}
                     />
                   ))}
                 </Image.PreviewGroup>
               ) : null}
             </Col>
-            <Col span={12}>
-              <Row align={"middle"}>
+            <Col md={12} xs={24} sm={24}>
+              <Row align={"middle"} style={{ marginTop: "5px" }}>
                 <Col span={12}>
                   <List.Item.Meta
                     title={item.nome}
-                    description={item.descrição}
+                    description={item.descricao}
                   />
                 </Col>
                 <Col span={12} style={{ textAlign: "right" }}>
