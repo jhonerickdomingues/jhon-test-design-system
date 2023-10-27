@@ -1,11 +1,15 @@
 import { Layout, LayoutProps, Row, Col } from "antd";
 const { Header } = Layout;
 import DsInputSearch from "../InputSearch/InputSearch";
+import { useTranslation } from "jhon-test-utils";
+
 interface IHeaderComponent extends LayoutProps {
   onSearch?: (params: any) => void;
 }
 
 const HeaderComponent = ({ onSearch, ...props }: IHeaderComponent) => {
+  const { t } = useTranslation();
+
   return (
     <Header
       {...props}
@@ -16,7 +20,7 @@ const HeaderComponent = ({ onSearch, ...props }: IHeaderComponent) => {
     >
       <Row align={"middle"}>
         <Col xs={10} sm={16} md={16}>
-          <h2 style={{ color: "white", margin: 0 }}>Products</h2>
+          <h2 style={{ color: "white", margin: 0 }}>{t("PRODUCTS")}</h2>
         </Col>
         <Col
           style={{

@@ -1,7 +1,7 @@
 import { Col, List, Row, Image } from "antd";
 import { ListProps } from "antd/es/list";
 import { useState } from "react";
-import { ProductType } from "jhon-test-utils";
+import { ProductType, useTranslation, centsToReal } from "jhon-test-utils";
 
 interface IListComponent extends ListProps<ProductType> {}
 
@@ -11,6 +11,7 @@ const ListComponent = ({
   ...props
 }: IListComponent) => {
   const [current, setCurrent] = useState(0);
+  const { t } = useTranslation();
 
   return (
     <List
@@ -58,11 +59,11 @@ const ListComponent = ({
                     <span
                       style={{ color: "grey", textDecoration: "line-through" }}
                     >
-                      R$ {item.preco_original}
+                      {centsToReal(item.preco_original)}
                     </span>{" "}
                     <span>
                       <h3>
-                        por <b>R$ {item.preco_promocional}</b>
+                        {t("BY")} <b>{centsToReal(item.preco_promocional)}</b>
                       </h3>
                     </span>
                   </div>
